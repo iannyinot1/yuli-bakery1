@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>List Tags</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+
+            background-image:
+                linear-gradient(rgba(255, 190, 215, 0.20),
+                                rgba(255, 190, 215, 0.20)),
+                url("https://i.pinimg.com/736x/24/9d/e3/249de332cd672de28548596e406d8723.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Main Box */
+        .box {
+            width: 650px;
+            max-width: 85%;
+            margin: 50px auto;
+            padding: 30px 40px;
+
+            background-color: rgba(255, 255, 255, 0.90);
+
+            border: 4px solid #d88aaa;
+            border-radius: 20px;
+
+            box-shadow: 0 5px 20px gray;
+        }
+
+        /* Main Title */
+        h1 {
+            text-align: center;
+            color: #8b4f68;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        /* Headings */
+        h2 {
+            color: #76536a;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        /* Lists */
+        ol {
+            margin-left: 20px;
+            padding-left: 25px;
+        }
+
+        /* NORMAL TEXT */
+        li {
+            font-size: 18px;
+            margin: 7px 0;
+            color: #444;
+            font-weight: normal;
+        }
+
+        /* List Markers */
+        .lowercase li::marker {
+            color: #d65c91;
+        }
+
+        .roman li::marker {
+            color: #8b63a8;
+        }
+
+        .lowerroman li::marker {
+            color: #5c8a62;
+        }
+
+        /* Section */
+        .section {
+            border-top: 2px solid #d88aaa;
+            padding-top: 5px;
+            margin-top: 25px;
+        }
+
+        /* Decorations */
+        .flower {
+            text-align: center;
+            font-size: 22px;
+            margin: 10px;
+        }
+
+        /* Thank You */
+        .thankyou {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+            border-top: 2px solid #d88aaa;
+            padding-top: 15px;
+        }
+
+        .moving {
+            color: #d14f82;
+            font-size: 20px;
+            font-weight: normal;
+            white-space: nowrap;
+            animation: move 6s linear infinite;
+        }
+
+        @keyframes move {
+
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>🌸 List Tags 🌸</h1>
+
+        <div class="flower">
+            🌸 🌿 🌸
+        </div>
+
+
+        <!-- LOWERCASE LETTERS -->
+
+        <div class="section">
+
+            <h2>Lowercase letters list:</h2>
+
+            <ol type="a" class="lowercase">
+
+                <li>Cherry Blossom</li>
+                <li>Japanese Maple</li>
+                <li>Willow</li>
+                <li>Wisteria</li>
+
+            </ol>
+
+        </div>
+
+
+        <!-- ROMAN NUMBERS -->
+
+        <div class="section">
+
+            <h2>Roman numbers list:</h2>
+
+            <ol type="I" class="roman">
+
+                <li>Cherry Blossom</li>
+                <li>Japanese Maple</li>
+                <li>Willow</li>
+                <li>Wisteria</li>
+
+            </ol>
+
+        </div>
+
+
+        <!-- LOWERCASE ROMAN NUMBERS -->
+
+        <div class="section">
+
+            <h2>Lowercase Roman numbers list:</h2>
+
+            <ol type="i" class="lowerroman">
+
+                <li>Cherry Blossom</li>
+                <li>Japanese Maple</li>
+                <li>Willow</li>
+                <li>Wisteria</li>
+
+            </ol>
+
+        </div>
+
+
+        <div class="flower">
+            🌸 🍃 🌸 🍃 🌸
+        </div>
+
+
+        <!-- RUNNING MESSAGE -->
+
+        <div class="thankyou">
+
+            <div class="moving">
+                Thank you for visiting! 🌸
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

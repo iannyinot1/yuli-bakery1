@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            background-image: url("https://i.pinimg.com/736x/dc/63/54/dc6354592fe60de131c02239aedcc758.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #e8e8e8;
+        }
+        .gallery-box {
+            background-color: white;
+            border: 2px solid #999;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 30px 40px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        h1 span {
+            color: red;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+        }
+        img {
+            width: 140px;
+            height: 110px;
+            border: 2px solid #555;
+            display: block;
+            object-fit: cover;
+        }
+        a:hover img {
+            opacity: 0.85;
+            border-color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-box">
+        <h1>MY <span>PICTURE</span> GALLERY</h1>
+
+        <table>
+            <tr>
+                <td>
+                    <a href="https://www.google.com" target="_blank">
+                        <img src="https://picsum.photos/id/29/300/250" alt="Green Leaf">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.yahoo.com" target="_blank">
+                        <img src="https://picsum.photos/id/0/300/250" alt="Keyboard">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.bing.com" target="_blank">
+                        <img src="https://picsum.photos/id/15/300/250" alt="Landscape Path">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="https://picsum.photos/id/1016/300/250" alt="Cracked Ground">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Picture Gallery</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image:
+        linear-gradient(rgba(255, 190, 215, 0.15),
+                        rgba(255, 190, 215, 0.15)),
+        url("https://i.pinimg.com/736x/24/9d/e3/249de332cd672de28548596e406d8723.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* TITLE */
+
+.title {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px auto 10px auto;
+    animation: jumpTitle 1.5s infinite;
+}
+
+.title h1 {
+    margin: 0;
+    font-family: cursive;
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    text-shadow:
+        2px 2px 4px #c94f8a,
+        0 0 10px #ff69b4;
+}
+
+.title span {
+    font-size: 32px;
+    filter: drop-shadow(0 0 5px #ff69b4);
+}
+
+@keyframes jumpTitle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* FALLING FLOWERS */
+
+.petal {
+    position: fixed;
+    top: -60px;
+    font-size: 28px;
+    z-index: 100;
+    pointer-events: none;
+    animation: fallingPetal 7s linear infinite;
+}
+
+.petal:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.petal:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+    animation-duration: 8s;
+}
+
+.petal:nth-child(3) {
+    left: 35%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.petal:nth-child(4) {
+    left: 50%;
+    animation-delay: 3s;
+    animation-duration: 9s;
+}
+
+.petal:nth-child(5) {
+    left: 70%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.petal:nth-child(6) {
+    left: 90%;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+
+.petal:nth-child(7) {
+    left: 60%;
+    animation-delay: 5s;
+    animation-duration: 6s;
+}
+
+@keyframes fallingPetal {
+    0% {
+        top: -60px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    25% {
+        transform: translateX(80px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateX(-80px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateX(80px) rotate(270deg);
+    }
+
+    100% {
+        top: 110vh;
+        transform: translateX(-60px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SPARKLES */
+
+.sparkle {
+    position: fixed;
+    color: white;
+    font-size: 25px;
+    z-index: 5;
+    animation: sparkleFloat 2s infinite alternate;
+    text-shadow: 0 0 10px #ff69b4;
+}
+
+.sparkle1 {
+    top: 15%;
+    left: 5%;
+}
+
+.sparkle2 {
+    top: 25%;
+    right: 5%;
+    animation-delay: 0.5s;
+}
+
+.sparkle3 {
+    top: 65%;
+    left: 3%;
+    animation-delay: 1s;
+}
+
+.sparkle4 {
+    top: 70%;
+    right: 4%;
+    animation-delay: 1.5s;
+}
+
+.sparkle5 {
+    top: 45%;
+    left: 50%;
+    animation-delay: 0.8s;
+}
+
+@keyframes sparkleFloat {
+    from {
+        transform: scale(0.7) rotate(0deg);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* BUTTERFLIES */
+
+.butterfly {
+    position: fixed;
+    font-size: 30px;
+    z-index: 10;
+    animation: butterflyFloat 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.butterfly1 {
+    left: 2%;
+    top: 40%;
+}
+
+.butterfly2 {
+    right: 2%;
+    top: 55%;
+    animation-delay: 1s;
+}
+
+.butterfly3 {
+    left: 8%;
+    bottom: 8%;
+    animation-delay: 2s;
+}
+
+.butterfly4 {
+    right: 8%;
+    bottom: 10%;
+    animation-delay: 1.5s;
+}
+
+@keyframes butterflyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* DIVIDER */
+
+.divider {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    margin: 5px auto 10px auto;
+    text-shadow: 0 0 8px #ff69b4;
+}
+
+/* GALLERY */
+
+.gallery-box {
+    position: relative;
+    z-index: 20;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    box-shadow:
+        0 0 15px rgba(255,105,180,0.7),
+        0 0 30px rgba(255,105,180,0.3);
+}
+
+table {
+    margin: auto;
+    border-spacing: 10px;
+    background: transparent;
+}
+
+/* PICTURES */
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid white;
+
+    box-shadow:
+        0 0 10px rgba(255,105,180,0.8);
+
+    transition: 0.3s;
+
+    animation: pictureOpen 1s ease-out forwards;
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+@keyframes pictureOpen {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-15deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+tr:nth-child(1) img {
+    animation-delay: 0.1s;
+}
+
+tr:nth-child(2) img {
+    animation-delay: 0.3s;
+}
+
+tr:nth-child(3) img {
+    animation-delay: 0.5s;
+}
+
+tr:nth-child(4) img {
+    animation-delay: 0.7s;
+}
+
+/* LITTLE WIGGLE */
+
+img:hover {
+    animation: littleWiggle 0.5s ease-in-out;
+    box-shadow: 0 0 20px #ff69b4;
+}
+
+@keyframes littleWiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(-2deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* CLICKED PICTURE - A LITTLE BIGGER */
+
+img.clicked {
+    transform: scale(1.15);
+    box-shadow:
+        0 0 15px #ff69b4,
+        0 0 30px rgba(255,105,180,0.8);
+}
+
+/* RUNNING THANK YOU */
+
+.thankyou-container {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.thankyou {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+        2px 2px 5px #c94f8a,
+        0 0 10px #ff69b4;
+
+    animation: runningThankYou 10s linear infinite;
+}
+
+@keyframes runningThankYou {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* BOTTOM DECORATION */
+
+.bottom-decoration {
+    position: relative;
+    z-index: 30;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff69b4;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FALLING FLOWERS -->
+
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+<div class="petal">🌸</div>
+
+<!-- SPARKLES -->
+
+<div class="sparkle sparkle1">✦</div>
+<div class="sparkle sparkle2">✧</div>
+<div class="sparkle sparkle3">✦</div>
+<div class="sparkle sparkle4">✧</div>
+<div class="sparkle sparkle5">✦</div>
+
+<!-- BUTTERFLIES -->
+
+<div class="butterfly butterfly1">🦋</div>
+<div class="butterfly butterfly2">🦋</div>
+<div class="butterfly butterfly3">🦋</div>
+<div class="butterfly butterfly4">🦋</div>
+
+<!-- TITLE -->
+
+<div class="title">
+    <span>🌸</span>
+    <h1>My Cherry Blossoms Gallery</h1>
+    <span>🌸</span>
+</div>
+
+<!-- DIVIDER -->
+
+<div class="divider">
+    ✧･ﾟ: *✧･ﾟ:* 🌸 *:･ﾟ✧*:･ﾟ✧
+</div>
+
+<!-- GALLERY -->
+
+<div class="gallery-box">
+
+<table>
+
+<tr>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_v6OwgNFnt8zDr8JCLAaxZM76u-oxkdldY7ipXbekqvR4qJYTquvfOBE&s=10"></td>
+<td><img src="https://i.pinimg.com/236x/07/2d/87/072d87f92be33f61b784329102b9bf41.jpg"></td>
+<td><img src="https://i.pinimg.com/originals/af/7d/48/af7d489f607aaf04766e4b36442bcd23.jpg?nii=t"></td>
+<td><img src="https://i.pinimg.com/474x/c0/36/f0/c036f0bd78c0b8a96b9e89bb27187f5c.jpg"></td>
+<td><img src="https://i.pinimg.com/236x/06/95/21/06952159c1390cda37e4ce50b46f7c4e.jpg"></td>
+</tr>
+
+<tr>
+<td><img src="https://i.pinimg.com/736x/d8/cb/06/d8cb060782983d783e7747ae94157008.jpg"></td>
+<td><img src="https://i.pinimg.com/originals/2c/45/dd/2c45ddac49b7b9f1abac804cd95fc2dd.jpg"></td>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4oDkqre0rDv0J5uUM0yv1Yt7zLd9c8PgMh8NyvekLYbH76VhKcM3bH02z&s=10"></td>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_v6OwgNFnt8zDr8JCLAaxZM76u-oxkdldY7ipXbekqvR4qJYTquvfOBE&s=10"></td>
+<td><img src="https://preview.redd.it/a-nice-view-of-mount-fuji-japan-v0-jlxumxzcaiah1.jpeg?width=640&crop=smart&auto=webp&s=fd611e321848450107a0f5f5a3acf4df51511dd0"></td>
+</tr>
+
+<tr>
+<td><img src="https://i.pinimg.com/originals/86/be/c7/86bec7c652df852f39e4138704232300.jpg"></td>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqygHlVgoxHS5RPWyQMwnexLpjMpe7KFl_N5SCwpLnw6-za8ZKAcT0YSY&s=10"></td>
+<td><img src="https://i.pinimg.com/564x/ee/43/ff/ee43ff74a4f8460a2cc25e2a5251afc3.jpg"></td>
+<td><img src="https://i.pinimg.com/originals/06/95/21/06952159c1390cda37e4ce50b46f7c4e.jpg"></td>
+<td><img src="https://i.pinimg.com/236x/f1/10/fc/f110fc3a8bf5da6ed0531a9e92bf662e.jpg"></td>
+</tr>
+
+<tr>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1yG2dX-F18ffuoghUIjcIx_H2m2wqegs5jQH9X1o0DGtxsO4QONmi9Sc&s=10"></td>
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZaPhECjNOZ29v4iaLwF_D3_Q6rowV5J_lVdm2kuYRkPmY345vj9HkRYw&s=10"></td>
+<td><img src="https://i.pinimg.com/originals/ac/d6/bc/acd6bc85d81f4a386e88edb3205f8497.jpg?nii=t"></td>
+<td><img src="https://i.pinimg.com/736x/a1/75/8d/a1758dcbef71e890a82b22a70bd1b968.jpg"></td>
+<td><img src="https://i.pinimg.com/236x/be/31/e2/be31e21ac87cdb3dd27cc69829581f34.jpg"></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- RUNNING THANK YOU -->
+
+<div class="thankyou-container">
+    <div class="thankyou">
+        🌸 Thank you for visiting my gallery 🌸 ✨🦋✨
+    </div>
+</div>
+
+<!-- BOTTOM DECORATION -->
+
+<div class="bottom-decoration">
+     🌸 🦋 🌸 ✦ 🌸 🦋 🌸 
+</div>
+
+<!-- CLICK SOUND -->
+
+<audio id="clickSound">
+    <source src="https://www.soundjay.com/buttons/sounds/button-09a.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const images = document.querySelectorAll("img");
+const sound = document.getElementById("clickSound");
+
+images.forEach(function(image) {
+
+    image.addEventListener("click", function() {
+
+        /* PLAY SOUND */
+        sound.currentTime = 0;
+        sound.play();
+
+        /* MAKE IMAGE A LITTLE BIGGER */
+        image.classList.toggle("clicked");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

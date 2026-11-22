@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- FIXES THE WEIRD Ã CHARACTERS -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Favorite Poem</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+
+            font-family: Georgia, serif;
+            text-align: center;
+
+            /* Sakura Background */
+            background-image: url("https://i.pinimg.com/736x/af/f5/9b/aff59ba0af7147a2a8d2fda7c8e691bc.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+            min-height: 100vh;
+        }
+
+
+        
+
+        /* MAIN BOX */
+
+        .container {
+
+            width: 90%;
+            max-width: 700px;
+
+            margin: 20px auto;
+
+            padding: 30px;
+
+            background-color: rgba(255, 255, 255, 0.90);
+
+            border: 3px solid #e8a0b5;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 20px rgba(100, 50, 50, 0.3);
+        }
+
+
+        /* TITLE */
+
+        h1 {
+            color: #b84c6f;
+
+            font-size: 32px;
+
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        /* POEM TITLE */
+
+        h2 {
+            color: #c96b87;
+
+            font-size: 27px;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* AUTHOR */
+
+        .author {
+            color: #777;
+
+            font-size: 15px;
+
+            margin-top: 5px;
+        }
+
+
+        /* LINE */
+
+        hr {
+            border: none;
+
+            border-top: 2px solid #e8a0b5;
+
+            margin: 25px 0;
+        }
+
+
+        /* POEM */
+
+        .poem {
+
+            background-color: rgba(255, 240, 245, 0.85);
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #4a3a3d;
+        }
+
+
+        .poem p {
+            margin: 10px 0 20px 0;
+        }
+
+
+        /* FAVORITE LINE */
+
+        h3 {
+            color: #b84c6f;
+
+            font-size: 20px;
+        }
+
+
+        mark {
+
+            background-color: #f6b6c8;
+
+            color: #7a3048;
+
+            padding: 7px 12px;
+
+            border-radius: 10px;
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+
+            color: #6d555c;
+
+            font-style: italic;
+
+            font-size: 15px;
+        }
+
+
+        /* PHONE SIZE */
+
+        @media screen and (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .download-btn {
+                font-size: 14px;
+
+                padding: 10px 18px;
+
+                margin-bottom: 15px;
+            }
+
+            .container {
+
+                width: 100%;
+
+                margin: 10px auto;
+
+                padding: 20px;
+
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            .poem {
+                font-size: 16px;
+
+                padding: 15px;
+
+                line-height: 1.7;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .message {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+
+        <h1>My Favorite Poem</h1>
+
+
+        <h2>
+            <u>Dreams</u>
+        </h2>
+
+
+        <p class="author">
+
+            <b>By Langston Hughes</b>
+
+        </p>
+
+
+        <hr>
+
+
+        <div class="poem">
+
+
+            <p>
+
+                <i>Hold fast to dreams</i><br>
+
+                For if dreams die<br>
+
+                <strong>
+                    Life is a broken-winged bird
+                </strong><br>
+
+                That cannot fly.
+
+            </p>
+
+
+
+            <p>
+
+                <i>Hold fast to dreams</i><br>
+
+                For when dreams go<br>
+
+                <em>
+                    Life is a barren field
+                </em><br>
+
+                Frozen with snow.
+
+            </p>
+
+
+        </div>
+
+
+        <hr>
+
+
+        <h3>
+            My Favorite Line
+        </h3>
+
+
+        <p>
+
+            <mark>
+                Hold fast to dreams.
+            </mark>
+
+        </p>
+
+
+        <p class="message">
+
+            This poem reminds me to keep believing in my dreams.
+
+        </p>
+
+
+    </div>
+
+
+
+    
+
+    </script>
+
+
+</body>
+
+</html>
